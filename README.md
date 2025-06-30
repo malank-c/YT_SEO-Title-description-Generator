@@ -64,6 +64,8 @@ npm install
 
 ## 🔑 Set Up Environment Variables
 
+### Server
+
 In the `server` folder, create a `.env` file:
 
 ```bash
@@ -75,6 +77,22 @@ Add this line inside the file:
 ```bash
 OPENROUTER_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (add your API key here)
 ```
+
+### Client
+
+In the `client` folder, create a `.env` file:
+
+```bash
+touch .env
+```
+
+Add this line inside the file:
+
+```bash
+VITE_API_URL=http://your-proxy-url-here
+```
+
+`.env.example` has been added to both the folders for a better understanding on how to set the API
 
 ---
 
