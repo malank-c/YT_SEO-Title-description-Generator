@@ -1,0 +1,11 @@
+# ignore environment variable files
+.env
+.env.local
+
+# node modules
+node_modules/
+
+# build artifacts
+dist/
+build/
+

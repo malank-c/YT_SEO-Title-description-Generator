@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex.flex-column.min-vh-100.bg-light.w-100.animated-bg {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: linear-gradient(120deg, #f5f7fa, #e4ecf6, #f5f7fa);
+  background-size: 400% 400%;
+  animation: gradientLoop 15s ease infinite;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientLoop {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.app-header {
+  background: linear-gradient(to right, #000000, #333333);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 0.8s ease-in-out;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ddd;
+  margin-top: 0.5rem;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+  .grid-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.input-section {
+  width: 200%;
+  overflow-wrap: break-word;
+  padding: 2rem;
+  border-radius: 9px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  flex: 1 1 40rem;
+  max-width: 500px;
+  min-width: 320px;
+  background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+  backdrop-filter: blur(8px); /* Smooth background blur */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.output-section {
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  min-height: 300px;
+  background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+  backdrop-filter: blur(8px); /* Smooth background blur */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.markdown-container {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  max-height: 60vh;
+  border: 1px solid #dee2e6;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+}
+
+.markdown-container h1,
+.markdown-container h2,
+.markdown-container h3 {
+  margin-top: 1rem;
+}
+
+.markdown-container ul {
+  padding-left: 1.2rem;
+}
+
+.markdown-container code {
+  background-color: #f1f1f1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .output-section {
+    padding: 1rem;
+  }
+
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+  .markdown-container {
+    padding: 1rem;
+  }
+}
+
+/* Custom Elegant Button Styles */
+.btn {
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific overrides for each type if needed */
+.btn-primary {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3b40b3, #6f73e0);
+}
+
+.btn-outline-secondary {
+  border-color: #ccc;
+  color: #555;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #eee;
+  color: #222;
+}
+
+.btn-outline-success {
+  color: #2e7d32;
+  border-color: #81c784;
+}
+
+.btn-outline-success:hover {
+  background-color: #81c784;
+  color: white;
+}
+
+.btn-outline-danger {
+  color: #c62828;
+  border-color: #e57373;
+}
+
+.btn-outline-danger:hover {
+  background-color: #e57373;
+  color: white;
+}
+
+.btn-outline-dark {
+  color: #333;
+  border-color: #aaa;
+}
+
+.btn-outline-dark:hover {
+  background-color: #333;
+  color: white;
+}
