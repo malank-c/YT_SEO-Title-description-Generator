@@ -40,6 +40,7 @@ Paste in your video **script or summary**, and let the AI do the magic.
 ```bash
 git clone https://github.com/your-username/YT_SEO-Title-description-Generator.git
 cd YT_SEO-Title-description-Generator
+```
 
 ---
 
@@ -50,12 +51,14 @@ cd YT_SEO-Title-description-Generator
 ```bash
 cd client
 npm install
+```
 
 ### Backend
 
 ```bash
 cd server
 npm install
+```
 
 ---
 
@@ -65,10 +68,13 @@ In the `server` folder, create a `.env` file:
 
 ```bash
 touch .env
+```
 
 Add this line inside the file:
 
+```bash
 OPENROUTER_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 
 ---
 
@@ -79,9 +85,11 @@ OPENROUTER_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```bash
 cd server
 node index.js
+```
 
 ### Start Frontend Server
 
 ```bash
 cd client
 npm run dev
+```
