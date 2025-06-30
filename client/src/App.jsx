@@ -21,7 +21,7 @@ function App() {
     try {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/generate`, {
         script,
-        count: sliderValue,
+        count: sliderValue, // Slider to set the value of alternate responses
       });
       setResult(res.data.result);
     } catch (err) {
@@ -30,24 +30,27 @@ function App() {
     }
     setLoading(false);
   };
-
+  
+  // Function to copy response after generation
   const handleCopy = () => {
     navigator.clipboard.writeText(result);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
-
+  
+  // Function to download response after generation
   const handleDownload = (type) => {
   if (!result) return;
 
   const filename = `youtube_output.${type}`;
 
+  // Download as PDF, TXT, DOC
   if (type === "txt" || type === "doc") {
     const blob = new Blob([result], { type: "text/plain;charset=utf-8" });
     saveAs(blob, filename);
   } else if (type === "pdf") {
     const doc = new jsPDF();
-    const lines = doc.splitTextToSize(result, 180); // wrap text
+    const lines = doc.splitTextToSize(result, 180); // wrap text if too big
     ddoc.setFont("Times", "Normal");
     doc.setFontSize(14);
     doc.text("Generated YouTube Title & Description", 10, 10);
@@ -69,7 +72,7 @@ function App() {
       <main className="flex-grow-1 d-flex justify-content-center align-items-start pb-5">
         <div className="container-fluid px-4">
           <div className="grid-layout">
-            {/* Left: Input Box */}
+            {/* Input Box to the Left */}
             <section className="input-section">
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
@@ -108,7 +111,7 @@ function App() {
               </form>
             </section>
 
-            {/* Right: Output Display */}
+            {/* Output Display to the Right*/}
             <section className="output-section">
               {loading ? (
                 <div className="text-center py-5">
@@ -119,6 +122,7 @@ function App() {
                 </div>
               ) : result ? (
                 <>
+                {/* Buttons to handle Copy, Download as set before */}
                   <div className="d-flex justify-content-end gap-3 mb-2 flex-wrap">
                     <button className="btn btn-outline-secondary btn-sm" onClick={handleCopy}>
                       <FaClipboard className="me-1" />

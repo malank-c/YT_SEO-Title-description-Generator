@@ -73,7 +73,7 @@ touch .env
 Add this line inside the file:
 
 ```bash
-OPENROUTER_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+OPENROUTER_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (add your API key here)
 ```
 
 ---

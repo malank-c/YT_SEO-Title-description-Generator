@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-// POST /api/generate
+// API Request Function
 router.post('/', async (req, res) => {
   const { script, count = 1 } = req.body;
 
@@ -22,9 +22,11 @@ ${script}
 `;
 
   try {
+    // Using OpenRouter for API Responses
     const response = await axios.post(
       'https://openrouter.ai/api/v1/chat/completions',
       {
+        // Name of model used
         model: "deepseek/deepseek-r1-0528-qwen3-8b:free",
         messages: [
           {
@@ -38,6 +40,7 @@ ${script}
         ]
       },
       {
+        // API Request type
         headers: {
           "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json"
