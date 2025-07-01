@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
   const prompt = `
 Generate ${count} catchy YouTube video titles and SEO-optimized descriptions for the following script.
 
-Format the response as a numbered **Markdown** list:
+Format the response as a numbered Markdown list:
 - Each item should begin with a bolded title (in **double asterisks**).
 - Follow the title with a two-paragraph description.
 
